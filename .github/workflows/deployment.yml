@@ -9,7 +9,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Linting
-        run: npm run eslint --ext .jsx --fix src
+        run: npm eslint --ext .jsx --fix src
   tests:
     needs: linting
     runs-on: ubuntu-latest
