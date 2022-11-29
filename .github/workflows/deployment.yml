@@ -1,14 +1,14 @@
 name: Deploy project
 on: [push, workflow_dispatch]
 jobs:
-  CodeLinting:
+  linting:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout
       - name: Linting
         run: npm run eslint --ext .jsx --fix src
-  RunTets:
+  tests:
     needs: CodeLinting
     runs-on: ubuntu-latest
     steps:
