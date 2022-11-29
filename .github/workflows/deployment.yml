@@ -9,7 +9,7 @@ jobs:
       - name: Linting
         run: npm run eslint --ext .jsx --fix src
   tests:
-    needs: CodeLinting
+    needs: linting
     runs-on: ubuntu-latest
     steps:
       - name: Get code
