@@ -2,7 +2,7 @@ name: Issuer
 on: issues
 jobs:
   details:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Show details
-      run: echo "${{ toJSON(github) }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show details
+        run: echo "${{ toJSON(github) }}"
