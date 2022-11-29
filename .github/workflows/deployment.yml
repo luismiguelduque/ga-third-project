@@ -10,7 +10,7 @@ jobs:
         run: npm install
       - name: Linting
         run: npm run lint
-  tests:
+  testing:
     needs: linting
     runs-on: ubuntu-latest
     steps:
@@ -20,3 +20,13 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test
+  building:
+    needs: [linting, testing]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Build code
+        run: npm run build
